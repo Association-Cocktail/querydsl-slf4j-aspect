@@ -1,0 +1,27 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+repositories {
+    mavenCentral()
+}
+
+group = "fr.assococktail"
+
+dependencies {
+    implementation "org.aspectj:aspectjweaver:1.9.22.1"
+    implementation "org.slf4j:slf4j-api:1.7.36"
+    compileOnly "com.querydsl:querydsl-sql:5.0.0"
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

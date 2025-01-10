@@ -1,0 +1,11 @@
+<!DOCTYPE aspectj PUBLIC "-//AspectJ//DTD//EN" "https://www.eclipse.org/aspectj/dtd/aspectj.dtd">
+<aspectj>
+    <weaver>
+        <include within="org.cocktail.gfc.base.config.aspects.QuerydslSqlLogger"/>
+        <include within="com.querydsl.sql.AbstractSQLQuery"/>
+        <include within="com.querydsl.sql.dml.AbstractSQLClause"/>
+    </weaver>
+    <aspects>
+        <aspect name="org.cocktail.gfc.base.config.aspects.QuerydslSqlLogger"/>
+    </aspects>
+</aspectj>
